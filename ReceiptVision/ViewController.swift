@@ -7,26 +7,24 @@
 //
 
 import UIKit
+import PNChartSwift
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     @IBOutlet var historyTable: UITableView!
-    @IBOutlet var budgetTable: UITableView!
+    @IBOutlet var budgetGraphView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 55/255.0, green: 225/255.0, blue: 183/255.0, alpha: 1.0)
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 102/255.0, alpha: 1.0)
         
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        self.navigationController!.navigationBar.titleTextAttributes = titleDict as! [String : AnyObject]
+        self.navigationController!.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
         // Do any additional setup after loading the view, typically from a nib.
         
         historyTable.delegate = self
         historyTable.dataSource = self
-        
-        budgetTable.delegate = self
-        budgetTable.dataSource = self
         
         let locationNib = UINib(nibName: "HistoryCell", bundle: nil)
         let topHistoryNib = UINib(nibName: "BudgetTransactions", bundle: nil)
@@ -35,7 +33,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         historyTable.registerNib(topHistoryNib, forCellReuseIdentifier: "topHistoryNib")
         historyTable.registerNib(allTransactionsNib, forCellReuseIdentifier: "allTransactions")
         
-        budgetTable.registerNib(topHistoryNib, forCellReuseIdentifier: "bottomTableHeader")
+        let barChart: PNBarChart = PNBarChart(frame: CGRectMake(0, 25, budgetGraphView.frame.width, budgetGraphView.frame.height - 25))
+        barChart.xLabels = ["Clothing", "Grocery", "Restaurants", "Electronics", "Fun"]
+        barChart.yValues = [1, 8, 2, 6, 4]
+        barChart.strokeColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 102/255.0, alpha: 1.0)
+        barChart.strokeChart()
+        self.budgetGraphView.addSubview(barChart)
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,41 +51,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if (tableView == historyTable) {
-            if (indexPath.row != 0 && indexPath.row != 4) {
-                let cell = historyTable.dequeueReusableCellWithIdentifier("locationCell") as! HistoryCell
-                cell.placeName.text = "Trader Joe's"
-                cell.placeCategory.text = "Grocery"
-                cell.datePurchased.text = "Today"
-                cell.moneySpent.text = "-$50.00"
-                
-                return cell
-            }
-            else if (indexPath.row == 0) {
-                let cell = historyTable.dequeueReusableCellWithIdentifier("topHistoryNib") as! BudgetTransactions
-                cell.budgetTransactions.text = "Recent Transactions"
-                return cell
-            } else {
-                let cell = historyTable.dequeueReusableCellWithIdentifier("allTransactions") as! AllTransactions
-                cell.allTransactions.text = "All Transactions"
-                return cell
-            }
-        } else {
-            if (indexPath.row == 0) {
-                let cell = budgetTable.dequeueReusableCellWithIdentifier("bottomTableHeader") as! BudgetTransactions
-                cell.budgetTransactions.text = "Fast approaching Budgets"
-                return cell
-            } else {
-                let cell = historyTable.dequeueReusableCellWithIdentifier("locationCell") as! HistoryCell
-                cell.placeName.text = ""
-                cell.placeCategory.text = ""
-                cell.datePurchased.text = ""
-                cell.moneySpent.text = ""
-                
-                return cell
-            }
+        if (indexPath.row != 0 && indexPath.row != 4) {
+            let cell = historyTable.dequeueReusableCellWithIdentifier("locationCell") as! HistoryCell
+            cell.placeName.text = "Trader Joe's"
+            cell.placeCategory.text = "Grocery"
+            cell.datePurchased.text = "Today"
+            cell.moneySpent.text = "-$50.00"
+            
+            return cell
         }
-        
+        else if (indexPath.row == 0) {
+            let cell = historyTable.dequeueReusableCellWithIdentifier("topHistoryNib") as! BudgetTransactions
+            cell.budgetTransactions.text = "Recent Transactions"
+            return cell
+        } else {
+            let cell = historyTable.dequeueReusableCellWithIdentifier("allTransactions") as! AllTransactions
+            cell.allTransactions.text = "All Transactions"
+            return cell
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row == 4) {
+            performSegueWithIdentifier("allTransactions", sender: nil)
+        }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,18 +83,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if (tableView == historyTable) {
-            if (indexPath.row != 0 && indexPath.row != 4) {
-                return 55
-            } else {
-                return 40
-            }
+        if (indexPath.row != 0 && indexPath.row != 4) {
+            return 55
         } else {
-            if (indexPath.row == 0) {
-                return 40
-            } else {
-                return 55
-            }
+            return 40
         }
     }
 

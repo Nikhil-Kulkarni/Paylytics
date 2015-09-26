@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="447" height="40"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YEQ-lk-FT4" id="xJG-0R-nYy">
-                <rect key="frame" x="0.0" y="0.0" width="447" height="40"/>
+                <rect key="frame" x="0.0" y="0.0" width="447" height="39.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Transactions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yO8-IA-E8C">
@@ -21,7 +21,7 @@
                             <constraint firstAttribute="width" constant="250" id="xTV-2i-GeB"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
-                        <color key="textColor" red="0.21568627450980393" green="0.88235294117647056" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.0" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>

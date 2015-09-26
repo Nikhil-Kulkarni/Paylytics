@@ -20,6 +20,13 @@
 		1189D0C21BB6DE9D00376C61 /* AllTransactions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1189D0C11BB6DE9D00376C61 /* AllTransactions.xib */; settings = {ASSET_TAGS = (); }; };
 		1189D0C41BB6E26C00376C61 /* BudgetGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1189D0C31BB6E26C00376C61 /* BudgetGraph.swift */; settings = {ASSET_TAGS = (); }; };
 		1189D0C61BB6E27D00376C61 /* BudgetGraph.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1189D0C51BB6E27D00376C61 /* BudgetGraph.xib */; settings = {ASSET_TAGS = (); }; };
+		11EAB9451BB6E4680090C4B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EAB9441BB6E4680090C4B0 /* Foundation.framework */; };
+		11EAB9471BB6E46D0090C4B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EAB9461BB6E46D0090C4B0 /* UIKit.framework */; };
+		11EAB9491BB6E4760090C4B0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EAB9481BB6E4760090C4B0 /* CoreGraphics.framework */; };
+		11EAB94B1BB6E47F0090C4B0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EAB94A1BB6E47F0090C4B0 /* QuartzCore.framework */; };
+		11EAB94D1BB6E48B0090C4B0 /* PNChartSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EAB94C1BB6E48B0090C4B0 /* PNChartSwift.framework */; };
+		11EAB94F1BB6F2B80090C4B0 /* AllTransactionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EAB94E1BB6F2B80090C4B0 /* AllTransactionsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		11EAB9511BB6FCB50090C4B0 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EAB9501BB6FCB50090C4B0 /* AddItemViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F5A8CC44555FA2615A4DB259 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70775C152D85799DC5F6E7A8 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -39,6 +46,13 @@
 		1189D0C11BB6DE9D00376C61 /* AllTransactions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllTransactions.xib; sourceTree = "<group>"; };
 		1189D0C31BB6E26C00376C61 /* BudgetGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetGraph.swift; sourceTree = "<group>"; };
 		1189D0C51BB6E27D00376C61 /* BudgetGraph.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BudgetGraph.xib; sourceTree = "<group>"; };
+		11EAB9441BB6E4680090C4B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		11EAB9461BB6E46D0090C4B0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		11EAB9481BB6E4760090C4B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		11EAB94A1BB6E47F0090C4B0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		11EAB94C1BB6E48B0090C4B0 /* PNChartSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PNChartSwift.framework; path = "Pods/../build/Debug-iphoneos/PNChartSwift.framework"; sourceTree = "<group>"; };
+		11EAB94E1BB6F2B80090C4B0 /* AllTransactionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTransactionsTableViewController.swift; sourceTree = "<group>"; };
+		11EAB9501BB6FCB50090C4B0 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		70775C152D85799DC5F6E7A8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89E5979B5BB463315223983 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F7D8D943989F73BC27C6BC34 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -49,6 +63,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11EAB94D1BB6E48B0090C4B0 /* PNChartSwift.framework in Frameworks */,
+				11EAB94B1BB6E47F0090C4B0 /* QuartzCore.framework in Frameworks */,
+				11EAB9491BB6E4760090C4B0 /* CoreGraphics.framework in Frameworks */,
+				11EAB9471BB6E46D0090C4B0 /* UIKit.framework in Frameworks */,
+				11EAB9451BB6E4680090C4B0 /* Foundation.framework in Frameworks */,
 				F5A8CC44555FA2615A4DB259 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				1118E5D91BB672280074BD2B /* AppDelegate.swift */,
+				11EAB9501BB6FCB50090C4B0 /* AddItemViewController.swift */,
+				11EAB94E1BB6F2B80090C4B0 /* AllTransactionsTableViewController.swift */,
 				1118E5DB1BB672280074BD2B /* ViewController.swift */,
 				1118E5DD1BB672280074BD2B /* Main.storyboard */,
 				1118E5EB1BB675C00074BD2B /* Custom Views */,
@@ -106,6 +127,11 @@
 		2E299170F6AD4E8FEA5D83B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				11EAB94C1BB6E48B0090C4B0 /* PNChartSwift.framework */,
+				11EAB94A1BB6E47F0090C4B0 /* QuartzCore.framework */,
+				11EAB9481BB6E4760090C4B0 /* CoreGraphics.framework */,
+				11EAB9461BB6E46D0090C4B0 /* UIKit.framework */,
+				11EAB9441BB6E4680090C4B0 /* Foundation.framework */,
 				70775C152D85799DC5F6E7A8 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -245,10 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11EAB94F1BB6F2B80090C4B0 /* AllTransactionsTableViewController.swift in Sources */,
 				1118E5EF1BB676270074BD2B /* HistoryCell.swift in Sources */,
 				1118E5DC1BB672280074BD2B /* ViewController.swift in Sources */,
 				1118E5DA1BB672280074BD2B /* AppDelegate.swift in Sources */,
 				1189D0C41BB6E26C00376C61 /* BudgetGraph.swift in Sources */,
+				11EAB9511BB6FCB50090C4B0 /* AddItemViewController.swift in Sources */,
 				1189D0C01BB6DE7C00376C61 /* AllTransactions.swift in Sources */,
 				1118E5F11BB682310074BD2B /* BudgetTransactions.swift in Sources */,
 			);
@@ -362,6 +390,10 @@
 			baseConfigurationReference = B89E5979B5BB463315223983 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = ReceiptVision/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilkulkarni.ReceiptVision;
@@ -374,6 +406,10 @@
 			baseConfigurationReference = F7D8D943989F73BC27C6BC34 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = ReceiptVision/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilkulkarni.ReceiptVision;

@@ -16,10 +16,36 @@
                     <view key="view" contentMode="scaleToFill" id="qRM-sl-s6d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONu-Hm-9El">
+                                <rect key="frame" x="141" y="98" width="92" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="92" id="qWf-TW-zKg"/>
+                                </constraints>
+                                <state key="normal" title="Take Picture"/>
+                                <connections>
+                                    <action selector="takePicture:" destination="vSw-Of-iwm" eventType="touchUpInside" id="1HD-YZ-h3t"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="htN-Sh-hib">
+                                <rect key="frame" x="29" y="136" width="316" height="511"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ONu-Hm-9El" firstAttribute="top" secondItem="8Fz-my-kWp" secondAttribute="bottom" constant="34" id="11V-dm-SbW"/>
+                            <constraint firstItem="ONu-Hm-9El" firstAttribute="centerX" secondItem="qRM-sl-s6d" secondAttribute="centerX" id="3Me-Yw-p9V"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="textView" destination="htN-Sh-hib" id="f2x-HZ-CTP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bs7-RK-xQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

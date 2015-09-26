@@ -16,6 +16,8 @@
 		1118E5EF1BB676270074BD2B /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118E5EE1BB676270074BD2B /* HistoryCell.swift */; settings = {ASSET_TAGS = (); }; };
 		1118E5F11BB682310074BD2B /* BudgetTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118E5F01BB682310074BD2B /* BudgetTransactions.swift */; settings = {ASSET_TAGS = (); }; };
 		1118E5F31BB682510074BD2B /* BudgetTransactions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1118E5F21BB682510074BD2B /* BudgetTransactions.xib */; settings = {ASSET_TAGS = (); }; };
+		113470941BB7289F0087AACA /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 113470931BB7289F0087AACA /* tessdata */; settings = {ASSET_TAGS = (); }; };
+		115C25F31BB70D7E00A6FACC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 115C25F21BB70D7E00A6FACC /* libz.dylib */; };
 		1189D0C01BB6DE7C00376C61 /* AllTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1189D0BF1BB6DE7C00376C61 /* AllTransactions.swift */; settings = {ASSET_TAGS = (); }; };
 		1189D0C21BB6DE9D00376C61 /* AllTransactions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1189D0C11BB6DE9D00376C61 /* AllTransactions.xib */; settings = {ASSET_TAGS = (); }; };
 		1189D0C41BB6E26C00376C61 /* BudgetGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1189D0C31BB6E26C00376C61 /* BudgetGraph.swift */; settings = {ASSET_TAGS = (); }; };
@@ -42,6 +44,9 @@
 		1118E5EE1BB676270074BD2B /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		1118E5F01BB682310074BD2B /* BudgetTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetTransactions.swift; sourceTree = "<group>"; };
 		1118E5F21BB682510074BD2B /* BudgetTransactions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BudgetTransactions.xib; sourceTree = "<group>"; };
+		1134707F1BB720FC0087AACA /* ReceiptVision-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReceiptVision-Header.h"; sourceTree = "<group>"; };
+		113470931BB7289F0087AACA /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		115C25F21BB70D7E00A6FACC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = ../../../../../opt/vagrant/embedded/lib/libz.dylib; sourceTree = "<group>"; };
 		1189D0BF1BB6DE7C00376C61 /* AllTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTransactions.swift; sourceTree = "<group>"; };
 		1189D0C11BB6DE9D00376C61 /* AllTransactions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllTransactions.xib; sourceTree = "<group>"; };
 		1189D0C31BB6E26C00376C61 /* BudgetGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetGraph.swift; sourceTree = "<group>"; };
@@ -63,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				115C25F31BB70D7E00A6FACC /* libz.dylib in Frameworks */,
 				11EAB94D1BB6E48B0090C4B0 /* PNChartSwift.framework in Frameworks */,
 				11EAB94B1BB6E47F0090C4B0 /* QuartzCore.framework in Frameworks */,
 				11EAB9491BB6E4760090C4B0 /* CoreGraphics.framework in Frameworks */,
@@ -100,7 +106,9 @@
 				11EAB9501BB6FCB50090C4B0 /* AddItemViewController.swift */,
 				11EAB94E1BB6F2B80090C4B0 /* AllTransactionsTableViewController.swift */,
 				1118E5DB1BB672280074BD2B /* ViewController.swift */,
+				1134707F1BB720FC0087AACA /* ReceiptVision-Header.h */,
 				1118E5DD1BB672280074BD2B /* Main.storyboard */,
+				113470931BB7289F0087AACA /* tessdata */,
 				1118E5EB1BB675C00074BD2B /* Custom Views */,
 				1118E5E01BB672280074BD2B /* Assets.xcassets */,
 				1118E5E21BB672280074BD2B /* LaunchScreen.storyboard */,
@@ -127,6 +135,7 @@
 		2E299170F6AD4E8FEA5D83B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				115C25F21BB70D7E00A6FACC /* libz.dylib */,
 				11EAB94C1BB6E48B0090C4B0 /* PNChartSwift.framework */,
 				11EAB94A1BB6E47F0090C4B0 /* QuartzCore.framework */,
 				11EAB9481BB6E4760090C4B0 /* CoreGraphics.framework */,
@@ -207,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1189D0C21BB6DE9D00376C61 /* AllTransactions.xib in Resources */,
+				113470941BB7289F0087AACA /* tessdata in Resources */,
 				1118E5E41BB672280074BD2B /* LaunchScreen.storyboard in Resources */,
 				1189D0C61BB6E27D00376C61 /* BudgetGraph.xib in Resources */,
 				1118E5F31BB682510074BD2B /* BudgetTransactions.xib in Resources */,
@@ -390,12 +400,26 @@
 			baseConfigurationReference = B89E5979B5BB463315223983 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = ReceiptVision/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/vagrant/embedded/lib,
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"stdc++\"",
+					"-framework",
+					"\"PNChartSwift\"",
+					"-framework",
+					"\"TesseractOCR\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilkulkarni.ReceiptVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -406,12 +430,26 @@
 			baseConfigurationReference = F7D8D943989F73BC27C6BC34 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = ReceiptVision/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/vagrant/embedded/lib,
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"stdc++\"",
+					"-framework",
+					"\"PNChartSwift\"",
+					"-framework",
+					"\"TesseractOCR\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilkulkarni.ReceiptVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

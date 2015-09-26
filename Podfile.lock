@@ -1,8 +1,12 @@
 PODS:
+  - LiveSDK (5.6.2)
   - PNChartSwift (0.0.2)
+  - TesseractOCRiOS (4.0.0)
 
 DEPENDENCIES:
+  - LiveSDK
   - PNChartSwift (from `https://github.com/kevinzhow/PNChart-Swift.git`)
+  - TesseractOCRiOS (= 4.0.0)
 
 EXTERNAL SOURCES:
   PNChartSwift:
@@ -14,6 +18,8 @@ CHECKOUT OPTIONS:
     :git: https://github.com/kevinzhow/PNChart-Swift.git
 
 SPEC CHECKSUMS:
+  LiveSDK: 893e20f06cc1838e14ec31ecf8f64ad3d18810c9
   PNChartSwift: bcdfbffd65920072463eff42d0dfb46189bf4495
+  TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
 
 COCOAPODS: 0.38.2

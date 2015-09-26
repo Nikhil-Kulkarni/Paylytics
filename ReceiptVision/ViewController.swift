@@ -8,9 +8,9 @@
 
 import UIKit
 import PNChartSwift
+import LiveSDK
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
     
     @IBOutlet var historyTable: UITableView!
     @IBOutlet var budgetGraphView: UIView!
@@ -22,6 +22,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         self.navigationController!.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
         
         historyTable.delegate = self
         historyTable.dataSource = self

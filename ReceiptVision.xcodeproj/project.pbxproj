@@ -18,6 +18,7 @@
 		1118E5F31BB682510074BD2B /* BudgetTransactions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1118E5F21BB682510074BD2B /* BudgetTransactions.xib */; settings = {ASSET_TAGS = (); }; };
 		113470941BB7289F0087AACA /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 113470931BB7289F0087AACA /* tessdata */; settings = {ASSET_TAGS = (); }; };
 		113470961BB73BBF0087AACA /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113470951BB73BBF0087AACA /* BudgetViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1134709A1BB7458D0087AACA /* BudgetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 113470991BB7458D0087AACA /* BudgetsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		115C25F31BB70D7E00A6FACC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 115C25F21BB70D7E00A6FACC /* libz.dylib */; };
 		1189D0C01BB6DE7C00376C61 /* AllTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1189D0BF1BB6DE7C00376C61 /* AllTransactions.swift */; settings = {ASSET_TAGS = (); }; };
 		1189D0C21BB6DE9D00376C61 /* AllTransactions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1189D0C11BB6DE9D00376C61 /* AllTransactions.xib */; settings = {ASSET_TAGS = (); }; };
@@ -48,6 +49,8 @@
 		1134707F1BB720FC0087AACA /* ReceiptVision-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReceiptVision-Header.h"; sourceTree = "<group>"; };
 		113470931BB7289F0087AACA /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		113470951BB73BBF0087AACA /* BudgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
+		113470981BB7458D0087AACA /* BudgetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BudgetsViewController.h; sourceTree = "<group>"; };
+		113470991BB7458D0087AACA /* BudgetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BudgetsViewController.m; sourceTree = "<group>"; };
 		115C25F21BB70D7E00A6FACC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = ../../../../../opt/vagrant/embedded/lib/libz.dylib; sourceTree = "<group>"; };
 		1189D0BF1BB6DE7C00376C61 /* AllTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTransactions.swift; sourceTree = "<group>"; };
 		1189D0C11BB6DE9D00376C61 /* AllTransactions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllTransactions.xib; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 				11EAB9501BB6FCB50090C4B0 /* AddItemViewController.swift */,
 				11EAB94E1BB6F2B80090C4B0 /* AllTransactionsTableViewController.swift */,
 				113470951BB73BBF0087AACA /* BudgetViewController.swift */,
+				113470981BB7458D0087AACA /* BudgetsViewController.h */,
+				113470991BB7458D0087AACA /* BudgetsViewController.m */,
 				1118E5DB1BB672280074BD2B /* ViewController.swift */,
 				1134707F1BB720FC0087AACA /* ReceiptVision-Header.h */,
 				1118E5DD1BB672280074BD2B /* Main.storyboard */,
@@ -187,6 +192,7 @@
 		1118E5CE1BB672280074BD2B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Nikhil Kulkarni";
 				TargetAttributes = {
@@ -289,6 +295,7 @@
 				1118E5DC1BB672280074BD2B /* ViewController.swift in Sources */,
 				1118E5DA1BB672280074BD2B /* AppDelegate.swift in Sources */,
 				113470961BB73BBF0087AACA /* BudgetViewController.swift in Sources */,
+				1134709A1BB7458D0087AACA /* BudgetsViewController.m in Sources */,
 				1189D0C41BB6E26C00376C61 /* BudgetGraph.swift in Sources */,
 				11EAB9511BB6FCB50090C4B0 /* AddItemViewController.swift in Sources */,
 				1189D0C01BB6DE7C00376C61 /* AllTransactions.swift in Sources */,
@@ -404,6 +411,7 @@
 			baseConfigurationReference = B89E5979B5BB463315223983 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -426,6 +434,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilkulkarni.ReceiptVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ReceiptVision/ReceiptVision-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -434,6 +444,7 @@
 			baseConfigurationReference = F7D8D943989F73BC27C6BC34 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -456,6 +467,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilkulkarni.ReceiptVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ReceiptVision/ReceiptVision-Header.h";
 			};
 			name = Release;
 		};

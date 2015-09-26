@@ -10,6 +10,5 @@
 #define ReceiptVision_Header_h
 
 #import <TesseractOCR/TesseractOCR.h>
-#import "LiveConnectClient.h"
 
 #endif /* ReceiptVision_Header_h */

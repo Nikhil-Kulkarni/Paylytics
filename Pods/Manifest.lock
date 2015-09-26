@@ -1,10 +1,14 @@
 PODS:
   - LiveSDK (5.6.2)
+  - PNChart (0.8.7):
+    - UICountingLabel (~> 1.2.0)
   - PNChartSwift (0.0.2)
   - TesseractOCRiOS (4.0.0)
+  - UICountingLabel (1.2.0)
 
 DEPENDENCIES:
   - LiveSDK
+  - PNChart
   - PNChartSwift (from `https://github.com/kevinzhow/PNChart-Swift.git`)
   - TesseractOCRiOS (= 4.0.0)
 
@@ -19,7 +23,9 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   LiveSDK: 893e20f06cc1838e14ec31ecf8f64ad3d18810c9
+  PNChart: c1755716bbd45386d2035b2bf2ce73e6d3f8cb22
   PNChartSwift: bcdfbffd65920072463eff42d0dfb46189bf4495
   TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 
 COCOAPODS: 0.38.2

@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="897.5" y="1115.5"/>
         </scene>
-        <!--Budget View Controller-->
+        <!--Budgets View Controller-->
         <scene sceneID="2vn-JG-V95">
             <objects>
-                <viewController id="pe5-Ux-mZl" customClass="BudgetViewController" customModule="ReceiptVision" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pe5-Ux-mZl" customClass="BudgetsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XWb-Of-X1J"/>
                         <viewControllerLayoutGuide type="bottom" id="WiI-sA-o8k"/>
@@ -71,7 +71,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rg-aR-egk">
                                 <rect key="frame" x="20" y="83" width="335" height="270"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <animations/>
@@ -89,8 +89,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="barGraphView" destination="lc5-TX-l44" id="0zs-FU-eHv"/>
-                        <outlet property="lineGraphView" destination="1rg-aR-egk" id="ASX-18-yOh"/>
+                        <outlet property="barGraphView" destination="lc5-TX-l44" id="H8A-7e-5Ku"/>
+                        <outlet property="pieGraphView" destination="1rg-aR-egk" id="I6g-FO-ddD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rm2-I8-3dE" userLabel="First Responder" sceneMemberID="firstResponder"/>

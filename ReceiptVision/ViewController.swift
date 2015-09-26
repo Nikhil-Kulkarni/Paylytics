@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet var historyTable: UITableView!
     @IBOutlet var budgetGraphView: UIView!
+    @IBOutlet var showBudgets: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +24,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.navigationController!.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
         // Do any additional setup after loading the view, typically from a nib.
         
-        
-        
         historyTable.delegate = self
         historyTable.dataSource = self
+        
+        showBudgets.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         
         let locationNib = UINib(nibName: "HistoryCell", bundle: nil)
         let topHistoryNib = UINib(nibName: "BudgetTransactions", bundle: nil)
@@ -35,7 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         historyTable.registerNib(topHistoryNib, forCellReuseIdentifier: "topHistoryNib")
         historyTable.registerNib(allTransactionsNib, forCellReuseIdentifier: "allTransactions")
         
-        let barChart: PNBarChart = PNBarChart(frame: CGRectMake(0, 25, budgetGraphView.frame.width, budgetGraphView.frame.height - 25))
+        let barChart: PNBarChart = PNBarChart(frame: CGRectMake(0, 25, budgetGraphView.frame.width, budgetGraphView.frame.height - 55))
         barChart.xLabels = ["Clothing", "Grocery", "Restaurants", "Electronics", "Fun"]
         barChart.yValues = [1, 8, 2, 6, 4]
         barChart.strokeColor = UIColor(red: 0/255.0, green: 204/255.0, blue: 102/255.0, alpha: 1.0)

@@ -49,7 +49,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bs7-RK-xQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116.5" y="1097.5"/>
+            <point key="canvasLocation" x="897.5" y="1115.5"/>
+        </scene>
+        <!--Budget View Controller-->
+        <scene sceneID="2vn-JG-V95">
+            <objects>
+                <viewController id="pe5-Ux-mZl" customClass="BudgetViewController" customModule="ReceiptVision" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XWb-Of-X1J"/>
+                        <viewControllerLayoutGuide type="bottom" id="WiI-sA-o8k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iLr-PM-sMm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lc5-TX-l44">
+                                <rect key="frame" x="20" y="370" width="335" height="270"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rg-aR-egk">
+                                <rect key="frame" x="20" y="83" width="335" height="270"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="lc5-TX-l44" firstAttribute="centerX" secondItem="iLr-PM-sMm" secondAttribute="centerX" id="DNA-1O-YDc"/>
+                            <constraint firstItem="lc5-TX-l44" firstAttribute="top" secondItem="iLr-PM-sMm" secondAttribute="top" constant="370" id="DqA-yC-5oS"/>
+                            <constraint firstItem="lc5-TX-l44" firstAttribute="trailing" secondItem="1rg-aR-egk" secondAttribute="trailing" id="E1x-sq-MzZ"/>
+                            <constraint firstItem="WiI-sA-o8k" firstAttribute="top" secondItem="lc5-TX-l44" secondAttribute="bottom" constant="27" id="M5I-Xk-Foh"/>
+                            <constraint firstItem="1rg-aR-egk" firstAttribute="leading" secondItem="lc5-TX-l44" secondAttribute="leading" id="UiX-MP-8h4"/>
+                            <constraint firstItem="lc5-TX-l44" firstAttribute="top" secondItem="1rg-aR-egk" secondAttribute="bottom" constant="17" id="WUh-kf-BCl"/>
+                            <constraint firstItem="1rg-aR-egk" firstAttribute="leading" secondItem="iLr-PM-sMm" secondAttribute="leadingMargin" constant="4" id="Zw6-Mw-oVf"/>
+                            <constraint firstItem="1rg-aR-egk" firstAttribute="top" secondItem="XWb-Of-X1J" secondAttribute="bottom" constant="19" id="qYi-ge-g5H"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="barGraphView" destination="lc5-TX-l44" id="0zs-FU-eHv"/>
+                        <outlet property="lineGraphView" destination="1rg-aR-egk" id="ASX-18-yOh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rm2-I8-3dE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1336.5" y="1115.5"/>
         </scene>
         <!--Updates-->
         <scene sceneID="tne-QT-ifu">
@@ -85,6 +131,21 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VI1-r6-mpP">
+                                                <rect key="frame" x="8" y="291" width="170" height="30"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="170" id="4IH-75-RFl"/>
+                                                    <constraint firstAttribute="height" constant="30" id="NEd-ni-TPN"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                                <state key="normal" title="All Budgets">
+                                                    <color key="titleColor" red="0.0" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="pe5-Ux-mZl" kind="show" identifier="showBudgets" id="C55-Rn-UJO"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -92,11 +153,20 @@
                                             <constraint firstItem="qYI-il-afU" firstAttribute="leading" secondItem="MWc-TD-n9t" secondAttribute="leading" constant="8" id="4Jy-r5-sUX"/>
                                             <constraint firstAttribute="trailing" secondItem="qYI-il-afU" secondAttribute="trailing" constant="80" id="5xE-bp-BW8"/>
                                             <constraint firstItem="qYI-il-afU" firstAttribute="top" secondItem="MWc-TD-n9t" secondAttribute="topMargin" id="7eK-qX-FM9"/>
+                                            <constraint firstItem="VI1-r6-mpP" firstAttribute="leading" secondItem="MWc-TD-n9t" secondAttribute="leading" constant="8" id="BsF-Jh-eaw"/>
+                                            <constraint firstItem="VI1-r6-mpP" firstAttribute="top" secondItem="MWc-TD-n9t" secondAttribute="top" constant="291" id="FVb-ad-vrf"/>
+                                            <constraint firstItem="VI1-r6-mpP" firstAttribute="leading" secondItem="MWc-TD-n9t" secondAttribute="leadingMargin" id="GYi-4R-TOo"/>
                                             <constraint firstItem="qYI-il-afU" firstAttribute="leading" secondItem="MWc-TD-n9t" secondAttribute="leadingMargin" id="HLg-Gx-1Ay"/>
+                                            <constraint firstItem="VI1-r6-mpP" firstAttribute="leading" secondItem="qYI-il-afU" secondAttribute="leading" id="Jm2-zZ-agh"/>
                                             <constraint firstItem="qYI-il-afU" firstAttribute="top" secondItem="MWc-TD-n9t" secondAttribute="top" constant="8" id="XNb-5D-cGa"/>
+                                            <constraint firstAttribute="bottom" secondItem="VI1-r6-mpP" secondAttribute="bottom" constant="8" id="Z09-oX-LCB"/>
                                             <constraint firstItem="qYI-il-afU" firstAttribute="top" secondItem="MWc-TD-n9t" secondAttribute="top" constant="8" id="aPe-UJ-QrA"/>
+                                            <constraint firstItem="VI1-r6-mpP" firstAttribute="leading" secondItem="MWc-TD-n9t" secondAttribute="leading" constant="8" id="cAz-ge-WxG"/>
+                                            <constraint firstItem="VI1-r6-mpP" firstAttribute="bottom" secondItem="MWc-TD-n9t" secondAttribute="bottomMargin" id="cpv-UM-kkI"/>
                                             <constraint firstItem="qYI-il-afU" firstAttribute="top" secondItem="MWc-TD-n9t" secondAttribute="top" constant="8" id="e6r-bL-VrF"/>
+                                            <constraint firstAttribute="bottom" secondItem="VI1-r6-mpP" secondAttribute="bottom" constant="8" id="jnP-b1-Eqt"/>
                                             <constraint firstItem="qYI-il-afU" firstAttribute="leading" secondItem="MWc-TD-n9t" secondAttribute="leading" constant="8" id="kqC-NY-m2x"/>
+                                            <constraint firstItem="VI1-r6-mpP" firstAttribute="leading" secondItem="MWc-TD-n9t" secondAttribute="leading" constant="8" id="yLC-6G-PAX"/>
                                             <constraint firstItem="qYI-il-afU" firstAttribute="leading" secondItem="MWc-TD-n9t" secondAttribute="leading" constant="8" id="zvv-Wx-180"/>
                                         </constraints>
                                     </view>
@@ -114,7 +184,7 @@
                             </scrollView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.93735532407407407" green="0.93735532407407407" blue="0.93735532407407407" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.8917410714285714" green="0.8917410714285714" blue="0.8917410714285714" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Updates" id="QxJ-2m-pWF">
@@ -129,6 +199,7 @@
                     <connections>
                         <outlet property="budgetGraphView" destination="MWc-TD-n9t" id="hij-uo-wAw"/>
                         <outlet property="historyTable" destination="bFu-bg-leX" id="ZNX-Py-vAM"/>
+                        <outlet property="showBudgets" destination="VI1-r6-mpP" id="YVo-hN-lh5"/>
                         <segue destination="4Th-X9-EEh" kind="show" identifier="allTransactions" id="nOD-PX-bxX"/>
                     </connections>
                 </viewController>

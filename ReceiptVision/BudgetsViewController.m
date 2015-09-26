@@ -29,8 +29,8 @@ NSArray *spent;
     [self.pieGraphView addSubview:pieChart];
     
     PNBarChart *barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 25, self.barGraphView.frame.size.width, self.barGraphView.frame.size.height - 25)];
-    [barChart setXLabels:@[@"SEP 21", @"SEP 22", @"SEP 23", @"SEP 24", @"SEP 25", @"SEP 26"]];
-    spent = @[@30, @50, @70, @30, @80, @40];
+    [barChart setXLabels:@[@"Clothing", @"Electronics", @"Entertainment", @"Gas", @"Gifts", @"Grocery", @"Miscellaneous", @"Restaurants"]];
+    spent = @[@30, @50, @70, @30, @80, @40, @20, @35];
     [barChart setYValues:spent];
     [barChart setYMaxValue:100];
     [barChart strokeChart];

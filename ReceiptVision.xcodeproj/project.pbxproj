@@ -25,6 +25,7 @@
 		113470A51BB788920087AACA /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113470A41BB788920087AACA /* ItemCell.swift */; settings = {ASSET_TAGS = (); }; };
 		113470A71BB788B70087AACA /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 113470A61BB788B70087AACA /* ItemCell.xib */; settings = {ASSET_TAGS = (); }; };
 		113470A91BB79B350087AACA /* SetBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113470A81BB79B350087AACA /* SetBudgetViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1154787C1BB82D9A009D573C /* HistogramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1154787B1BB82D9A009D573C /* HistogramViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		115C25F31BB70D7E00A6FACC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 115C25F21BB70D7E00A6FACC /* libz.dylib */; };
 		1189D0C01BB6DE7C00376C61 /* AllTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1189D0BF1BB6DE7C00376C61 /* AllTransactions.swift */; settings = {ASSET_TAGS = (); }; };
 		1189D0C21BB6DE9D00376C61 /* AllTransactions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1189D0C11BB6DE9D00376C61 /* AllTransactions.xib */; settings = {ASSET_TAGS = (); }; };
@@ -64,6 +65,7 @@
 		113470A41BB788920087AACA /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		113470A61BB788B70087AACA /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		113470A81BB79B350087AACA /* SetBudgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBudgetViewController.swift; sourceTree = "<group>"; };
+		1154787B1BB82D9A009D573C /* HistogramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistogramViewController.swift; sourceTree = "<group>"; };
 		115C25F21BB70D7E00A6FACC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = ../../../../../opt/vagrant/embedded/lib/libz.dylib; sourceTree = "<group>"; };
 		1189D0BF1BB6DE7C00376C61 /* AllTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTransactions.swift; sourceTree = "<group>"; };
 		1189D0C11BB6DE9D00376C61 /* AllTransactions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllTransactions.xib; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				113470991BB7458D0087AACA /* BudgetsViewController.m */,
 				1134709F1BB75F460087AACA /* LoginViewController.swift */,
 				1118E5DB1BB672280074BD2B /* ViewController.swift */,
+				1154787B1BB82D9A009D573C /* HistogramViewController.swift */,
 				1134709D1BB75EC40087AACA /* WebViewController.swift */,
 				1134707F1BB720FC0087AACA /* ReceiptVision-Header.h */,
 				113470A81BB79B350087AACA /* SetBudgetViewController.swift */,
@@ -327,6 +330,7 @@
 				11EAB94F1BB6F2B80090C4B0 /* AllTransactionsTableViewController.swift in Sources */,
 				1134709E1BB75EC40087AACA /* WebViewController.swift in Sources */,
 				1118E5EF1BB676270074BD2B /* HistoryCell.swift in Sources */,
+				1154787C1BB82D9A009D573C /* HistogramViewController.swift in Sources */,
 				1118E5DC1BB672280074BD2B /* ViewController.swift in Sources */,
 				1118E5DA1BB672280074BD2B /* AppDelegate.swift in Sources */,
 				11D32DF31BB7D64E00B31545 /* SpendingViewController.swift in Sources */,

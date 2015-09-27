@@ -28,13 +28,13 @@ extension UIImage {
 }
 
 class AddItemViewController: UIViewController, G8TesseractDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
-    
     var tesseract: G8Tesseract?
     @IBOutlet var textView: UITextView!
     var activityIndicator: UIActivityIndicatorView?
     @IBOutlet var tableView: UITableView!
     var itemsArr: NSMutableArray? = NSMutableArray()
     var pricesArr: NSMutableArray? = NSMutableArray()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -168,19 +168,10 @@ class AddItemViewController: UIViewController, G8TesseractDelegate, UIImagePicke
         request.addValue(contentType as String, forHTTPHeaderField: "Content-Type")
         let body = NSMutableData()
         body.appendData(NSString(format: "--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
-        body.appendData(NSString(format: "Content-Disposition: form-data; name=\"file\"; filename=\"%@\"\r\n", "name.JPG").dataUsingEncoding(NSUTF8StringEncoding)!)
+        body.appendData(NSString(format: "Content-Disposition: form-data; name=\"file\"; filename=\"%@\"\r\n", NSString(format: "receipt%d.JPG", Double(NSDate().timeIntervalSince1970))).dataUsingEncoding(NSUTF8StringEncoding)!)
         body.appendData(NSString(format: "Content-Type: application/octet-stream\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
         body.appendData(imageData!)
         body.appendData(NSString(format: "--%@--", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
-        print(body.description)
-//            
-//        
-//        
-//        body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
-//        body.appendData(NSString(format: "Content-Type: application/octet-stream\n\r\n\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-//        body.appendData(NSData(data: imageData!))
-//        body.appendData(NSString(format: "--%@--", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
-//        
         request.HTTPBody = body
         var responseData: NSData?
         do {
@@ -334,6 +325,7 @@ class AddItemViewController: UIViewController, G8TesseractDelegate, UIImagePicke
             })
         }
         task.resume()
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     /*

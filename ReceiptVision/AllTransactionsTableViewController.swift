@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class AllTransactionsTableViewController: UITableViewController {
+    
+    var activityIndicator: UIActivityIndicatorView?
+    var nameArr = NSMutableArray()
+    var priceArr = NSMutableArray()
+    var timeArr = NSMutableArray()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +37,45 @@ class AllTransactionsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        getData()
+    }
+    
+    func getData() {
+        let url = "https://sanshackgt.azurewebsites.net/get?access_token=\(ACCESS_TOKEN!)"
+        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        addActivityIndicator()
+        let session = NSURLSession.sharedSession()
+        request.HTTPMethod = "GET"
+        let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            let parsedJSON = JSON(data: data!)
+            print(parsedJSON)
+            let data = parsedJSON["data"].dictionary
+            let items = data!["items"]!.array
+            print(items)
+            for item in items! {
+                self.nameArr.addObject(item["name"].string!)
+                self.priceArr.addObject(item["cost"].double!)
+                self.timeArr.addObject(item["time"].string!)
+            }
+            self.tableView.reloadData()
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.removeActivityIndicator()
+            })
+        }
+        task.resume()
+    }
+    
+    func addActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(frame: view.bounds)
+        activityIndicator!.activityIndicatorViewStyle = .WhiteLarge
+        activityIndicator!.backgroundColor = UIColor(white: 0, alpha: 0.25)
+        activityIndicator!.startAnimating()
+        view.addSubview(activityIndicator!)
+    }
+    
+    func removeActivityIndicator() {
+        activityIndicator!.removeFromSuperview()
+        activityIndicator = nil
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +92,7 @@ class AllTransactionsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 15
+        return nameArr.count
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -61,10 +106,10 @@ class AllTransactionsTableViewController: UITableViewController {
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("locationCell") as! HistoryCell
-            cell.placeName.text = "Trader Joe's"
+            cell.placeName.text = nameArr[indexPath.row] as! String
             cell.placeCategory.text = "Grocery"
-            cell.datePurchased.text = "Today"
-            cell.moneySpent.text = "-$50.00"
+            cell.datePurchased.text = timeArr[indexPath.row] as! String
+            cell.moneySpent.text = "-\(priceArr[indexPath.row])"
             
             return cell
         }

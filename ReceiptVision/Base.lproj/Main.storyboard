@@ -221,15 +221,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rg-aR-egk">
-                                <rect key="frame" x="20" y="83" width="335" height="270"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lc5-TX-l44">
                                 <rect key="frame" x="20" y="370" width="335" height="270"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rg-aR-egk">
+                                <rect key="frame" x="20" y="83" width="335" height="270"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <animations/>
@@ -254,6 +254,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rm2-I8-3dE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1425.5" y="1115.5"/>
+        </scene>
+        <!--Histogram View Controller-->
+        <scene sceneID="jB2-xo-3sA">
+            <objects>
+                <viewController id="4ni-Ht-fCD" customClass="HistogramViewController" customModule="ReceiptVision" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E7z-hS-lt6"/>
+                        <viewControllerLayoutGuide type="bottom" id="MKD-mV-zmt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FKF-7e-dn3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sso-X0-4KG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="webView" destination="sso-X0-4KG" id="9XH-Mk-Dmt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lGj-6L-x8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1116.5" y="-366.5"/>
         </scene>
         <!--Updates-->
         <scene sceneID="tne-QT-ifu">
@@ -385,6 +415,7 @@
                         <outlet property="showBudgets" destination="VI1-r6-mpP" id="YVo-hN-lh5"/>
                         <outlet property="spendingBehavior" destination="MvA-C6-VgV" id="RRv-5h-NSG"/>
                         <segue destination="4Th-X9-EEh" kind="show" identifier="allTransactions" id="nOD-PX-bxX"/>
+                        <segue destination="4ni-Ht-fCD" kind="show" identifier="goToHistogram" id="sBi-we-0d7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -447,7 +478,7 @@
                                     <segue destination="H8o-KK-PM8" kind="presentation" id="uKq-yj-JHY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In to Cash Money" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwY-3A-zos">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In to Paylytics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwY-3A-zos">
                                 <rect key="frame" x="57" y="217" width="261" height="41"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="26"/>

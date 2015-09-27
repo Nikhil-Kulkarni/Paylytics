@@ -228,6 +228,7 @@
 				TargetAttributes = {
 					1118E5D51BB672280074BD2B = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 4N3AGH4V26;
 					};
 				};
 			};
@@ -448,6 +449,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -470,6 +473,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilkulkarni.ReceiptVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ReceiptVision/ReceiptVision-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -481,6 +485,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -503,6 +509,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilkulkarni.ReceiptVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ReceiptVision/ReceiptVision-Header.h";
 			};
 			name = Release;

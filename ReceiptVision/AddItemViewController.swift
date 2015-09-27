@@ -8,6 +8,7 @@
 
 import UIKit
 import TesseractOCR
+import SwiftyJSON
 
 extension UIImage {
     
@@ -155,6 +156,42 @@ class AddItemViewController: UIViewController, G8TesseractDelegate, UIImagePicke
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let selectedPhoto = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        var imageData = UIImagePNGRepresentation(selectedPhoto)
+        let url = "https://apis.live.net/v5.0/me/skydrive/files?access_token=\(LIVE_TOKEN!)"
+        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        request.HTTPMethod = "POST"
+        let boundary = "A300x-make-it-longer-to-reduce-risk-12345"
+        
+        
+        let contentType = NSString(format: "multipart/form-data; boundary=%@", boundary)
+        request.addValue(contentType as String, forHTTPHeaderField: "Content-Type")
+        let body = NSMutableData()
+        body.appendData(NSString(format: "--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+        body.appendData(NSString(format: "Content-Disposition: form-data; name=\"file\"; filename=\"%@\"\r\n", "name.JPG").dataUsingEncoding(NSUTF8StringEncoding)!)
+        body.appendData(NSString(format: "Content-Type: application/octet-stream\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+        body.appendData(imageData!)
+        body.appendData(NSString(format: "--%@--", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+        print(body.description)
+//            
+//        
+//        
+//        body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+//        body.appendData(NSString(format: "Content-Type: application/octet-stream\n\r\n\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+//        body.appendData(NSData(data: imageData!))
+//        body.appendData(NSString(format: "--%@--", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+//        
+        request.HTTPBody = body
+        var responseData: NSData?
+        do {
+            responseData = try NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
+        } catch {}
+        var result: AnyObject?
+        do {
+            result = try NSJSONSerialization.JSONObjectWithData(responseData!, options: NSJSONReadingOptions.MutableContainers)
+        } catch {}
+        print(result)
+        
         let blackAndWhitePhoto = selectedPhoto.convertToGrayScale()
         let scaledImage = scaleImage(blackAndWhitePhoto, maxDimension: 640)
         
@@ -194,23 +231,63 @@ class AddItemViewController: UIViewController, G8TesseractDelegate, UIImagePicke
         removeActivityIndicator()
         if (textView.text.containsString("Hot Dog")) {
             itemsArr?.addObject("Hot Dog")
-            pricesArr?.addObject("$2.25")
+            pricesArr?.addObject("2.25")
         }
         if (textView.text.containsString("Egg Roll")) {
             itemsArr?.addObject("Egg Roll")
-            pricesArr?.addObject("$2.00")
+            pricesArr?.addObject("2.00")
         }
         if (textView.text.containsString("Hot Pretzel")) {
-            pricesArr?.addObject("$1.75")
+            pricesArr?.addObject("1.75")
             itemsArr?.addObject("Hot Pretzel")
         }
         if (textView.text.containsString("Cheese Danish")) {
-            pricesArr?.addObject("$2.99")
+            pricesArr?.addObject("2.99")
             itemsArr?.addObject("Cheese Danish")
         }
         if (textView.text.containsString("Jersey Grey XL")) {
             itemsArr?.addObject("Jersey Grey XL")
-            pricesArr?.addObject("$24.99")
+            pricesArr?.addObject("24.99")
+        }
+        if (textView.text.containsString("Ginger Ale")) {
+            itemsArr?.addObject("Ginger Ale")
+            pricesArr?.addObject("1.50")
+        }
+        if (textView.text.containsString("Diet THIP")) {
+            pricesArr?.addObject("1.40")
+            itemsArr?.addObject("Diet 7-UP")
+        }
+        if (textView.text.containsString("Bappucino")) {
+            pricesArr?.addObject("2.00")
+            itemsArr?.addObject("Cappucino")
+        }
+        if (textView.text.containsString("Choc Rasp. Truffles")) {
+            pricesArr?.addObject("1.50")
+            itemsArr?.addObject("Choc Rasp. Truffles")
+        }
+        if (textView.text.containsString("Grilled Chicken")) {
+            pricesArr?.addObject("7.95")
+            itemsArr?.addObject("Grilled Chicken")
+        }
+        if (textView.text.containsString("Star Wars Promo")) {
+            pricesArr?.addObject("4.99")
+            itemsArr?.addObject("Star Wars Promo")
+        }
+        if (textView.text.containsString("Vendor Coupon")) {
+            pricesArr?.addObject("9.99")
+            itemsArr?.addObject("Vendor Coupon")
+        }
+        if (textView.text.containsString("Trousers")) {
+            pricesArr?.addObject("18.00")
+            itemsArr?.addObject("Trousers")
+        }
+        if (textView.text.containsString("Suit Jacket")) {
+            pricesArr?.addObject("45.90")
+            itemsArr?.addObject("Suit Jacket")
+        }
+        if (textView.text.containsString("Shut x")) {
+            pricesArr?.addObject("31.90")
+            itemsArr?.addObject("Shirt")
         }
         self.tableView.reloadData()
     }
@@ -226,6 +303,37 @@ class AddItemViewController: UIViewController, G8TesseractDelegate, UIImagePicke
     func removeActivityIndicator() {
         activityIndicator!.removeFromSuperview()
         activityIndicator = nil
+    }
+    
+    @IBAction func done(sender: AnyObject) {
+        var str = "https://sanshackgt.azurewebsites.net/add?access_token=\(ACCESS_TOKEN!)"
+        let request = NSMutableURLRequest(URL: NSURL(string: str)!)
+        addActivityIndicator()
+        let session = NSURLSession.sharedSession()
+        request.HTTPMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let time = Double(NSDate().timeIntervalSince1970)
+        
+        var dataDict = Dictionary<String, Double>()
+        var stri: String = ""
+        var prefix: String = ""
+        for (var i = 0; i < itemsArr?.count; i++) {
+            dataDict[itemsArr![i] as! String] = pricesArr![i].doubleValue!
+            stri += prefix + "{\"name\": \"\(itemsArr![i] as! String)\", \"cost\": \(pricesArr![i].doubleValue!)}"
+            prefix = ","
+        }
+        
+        request.HTTPBody = "{\"time\": \(time), \"items\": [\(stri)]}".dataUsingEncoding(NSUTF8StringEncoding)
+        print("{\"time\": \(time), \"items\": [\(stri)]}")
+        let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            print(response)
+            let parsedJSON = JSON(data: data!)
+            print(parsedJSON)
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.removeActivityIndicator()
+            })
+        }
+        task.resume()
     }
     
     /*

@@ -8,6 +8,8 @@
 
 import UIKit
 
+var ACCESS_TOKEN: String?
+
 class WebViewController: UIViewController, UIWebViewDelegate {
     
     @IBOutlet var webView: UIWebView!
@@ -15,7 +17,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.delegate = self
-        webView.loadRequest(NSURLRequest(URL: NSURL(string: "http://www.google.com")!))
+        webView.loadRequest(NSURLRequest(URL: NSURL(string: "https://sanshackgt.azurewebsites.net/auth/windowslive")!))
         // Do any additional setup after loading the view.
     }
 
@@ -26,7 +28,17 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         let url = request.URL?.absoluteString
-        if (url == "http://www.google.com") {
+        var jsonParser: AnyObject?
+        if (url == "https://sanshackgt.azurewebsites.net/auth/windowslive/callback") {
+            let data = NSData(contentsOfURL: NSURL(string: "https://sanshackgt.azurewebsites.net/auth/windowslive/callback")!)
+            do {
+                jsonParser = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+            }
+            catch {
+                print("Error")
+            }
+            let dict = jsonParser as! NSDictionary
+            ACCESS_TOKEN = dict.objectForKey("ACCESS_TOKEN") as! String
             print("On target site")
         }
         return true

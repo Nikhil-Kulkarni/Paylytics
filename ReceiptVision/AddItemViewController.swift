@@ -9,6 +9,24 @@
 import UIKit
 import TesseractOCR
 
+extension UIImage {
+    
+    private func convertToGrayScaleNoAlpha() -> CGImageRef {
+        let colorSpace = CGColorSpaceCreateDeviceGray();
+//        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.None.rawValue)
+        let context = CGBitmapContextCreate(nil, Int(size.width), Int(size.height), 8, 0, colorSpace, CGImageAlphaInfo.None.rawValue)
+        CGContextDrawImage(context, CGRectMake(0, 0, size.width, size.height), self.CGImage)
+        return CGBitmapContextCreateImage(context)!
+    }
+    
+    func convertToGrayScale() -> UIImage {
+        let context = CGBitmapContextCreate(nil, Int(size.width), Int(size.height), 8, 0, nil, CGImageAlphaInfo.Only.rawValue)
+        CGContextDrawImage(context, CGRectMake(0, 0, size.width, size.height), self.CGImage);
+        let mask = CGBitmapContextCreateImage(context)
+        return UIImage(CGImage: CGImageCreateWithMask(convertToGrayScaleNoAlpha(), mask)!, scale: scale, orientation:imageOrientation)
+    }
+}
+
 class AddItemViewController: UIViewController, G8TesseractDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var tesseract: G8Tesseract?
@@ -111,7 +129,8 @@ class AddItemViewController: UIViewController, G8TesseractDelegate, UIImagePicke
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let selectedPhoto = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let scaledImage = scaleImage(selectedPhoto, maxDimension: 640)
+        let blackAndWhitePhoto = selectedPhoto.convertToGrayScale()
+        let scaledImage = scaleImage(blackAndWhitePhoto, maxDimension: 640)
         
         addActivityIndicator()
         

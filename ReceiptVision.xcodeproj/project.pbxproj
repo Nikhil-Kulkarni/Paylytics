@@ -21,6 +21,7 @@
 		1134709A1BB7458D0087AACA /* BudgetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 113470991BB7458D0087AACA /* BudgetsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		1134709E1BB75EC40087AACA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134709D1BB75EC40087AACA /* WebViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		113470A01BB75F460087AACA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134709F1BB75F460087AACA /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		113470A31BB7656A0087AACA /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113470A21BB7656A0087AACA /* CoreImage.framework */; };
 		115C25F31BB70D7E00A6FACC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 115C25F21BB70D7E00A6FACC /* libz.dylib */; };
 		1189D0C01BB6DE7C00376C61 /* AllTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1189D0BF1BB6DE7C00376C61 /* AllTransactions.swift */; settings = {ASSET_TAGS = (); }; };
 		1189D0C21BB6DE9D00376C61 /* AllTransactions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1189D0C11BB6DE9D00376C61 /* AllTransactions.xib */; settings = {ASSET_TAGS = (); }; };
@@ -55,6 +56,7 @@
 		113470991BB7458D0087AACA /* BudgetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BudgetsViewController.m; sourceTree = "<group>"; };
 		1134709D1BB75EC40087AACA /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		1134709F1BB75F460087AACA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		113470A21BB7656A0087AACA /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		115C25F21BB70D7E00A6FACC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = ../../../../../opt/vagrant/embedded/lib/libz.dylib; sourceTree = "<group>"; };
 		1189D0BF1BB6DE7C00376C61 /* AllTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTransactions.swift; sourceTree = "<group>"; };
 		1189D0C11BB6DE9D00376C61 /* AllTransactions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllTransactions.xib; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113470A31BB7656A0087AACA /* CoreImage.framework in Frameworks */,
 				115C25F31BB70D7E00A6FACC /* libz.dylib in Frameworks */,
 				11EAB94D1BB6E48B0090C4B0 /* PNChartSwift.framework in Frameworks */,
 				11EAB94B1BB6E47F0090C4B0 /* QuartzCore.framework in Frameworks */,
@@ -157,6 +160,7 @@
 		2E299170F6AD4E8FEA5D83B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				113470A21BB7656A0087AACA /* CoreImage.framework */,
 				115C25F21BB70D7E00A6FACC /* libz.dylib */,
 				11EAB94C1BB6E48B0090C4B0 /* PNChartSwift.framework */,
 				11EAB94A1BB6E47F0090C4B0 /* QuartzCore.framework */,

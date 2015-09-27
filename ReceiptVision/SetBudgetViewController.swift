@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  SetBudgetViewController.swift
 //  ReceiptVision
 //
 //  Created by Nikhil Kulkarni on 9/26/15.
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class SetBudgetViewController: UIViewController {
 
+    @IBOutlet var budgetField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +20,16 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func letsGo(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {}
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.budgetField.endEditing(true)
     }
     
 

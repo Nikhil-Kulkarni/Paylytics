@@ -8,13 +8,14 @@
 
 import UIKit
 import PNChartSwift
-import LiveSDK
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var historyTable: UITableView!
     @IBOutlet var budgetGraphView: UIView!
     @IBOutlet var showBudgets: UIButton!
+    @IBOutlet var spendingBehavior: UIButton!
+    @IBOutlet var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         historyTable.delegate = self
         historyTable.dataSource = self
-        
-        showBudgets.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
+        scrollView.contentSize = CGSizeMake(self.view.frame.width, self.view.frame.height)
         
         let locationNib = UINib(nibName: "HistoryCell", bundle: nil)
         let topHistoryNib = UINib(nibName: "BudgetTransactions", bundle: nil)

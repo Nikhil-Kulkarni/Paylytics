@@ -13,7 +13,6 @@ extension UIImage {
     
     private func convertToGrayScaleNoAlpha() -> CGImageRef {
         let colorSpace = CGColorSpaceCreateDeviceGray();
-//        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.None.rawValue)
         let context = CGBitmapContextCreate(nil, Int(size.width), Int(size.height), 8, 0, colorSpace, CGImageAlphaInfo.None.rawValue)
         CGContextDrawImage(context, CGRectMake(0, 0, size.width, size.height), self.CGImage)
         return CGBitmapContextCreateImage(context)!
@@ -27,11 +26,14 @@ extension UIImage {
     }
 }
 
-class AddItemViewController: UIViewController, G8TesseractDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddItemViewController: UIViewController, G8TesseractDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
     var tesseract: G8Tesseract?
     @IBOutlet var textView: UITextView!
     var activityIndicator: UIActivityIndicatorView?
+    @IBOutlet var tableView: UITableView!
+    var itemsArr: NSMutableArray? = NSMutableArray()
+    var pricesArr: NSMutableArray? = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,12 @@ class AddItemViewController: UIViewController, G8TesseractDelegate, UIImagePicke
         
         tesseract = G8Tesseract(language: "eng")
         tesseract!.delegate = self
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        let nib = UINib(nibName: "ItemCell", bundle: nil)
+        tableView.registerNib(nib, forCellReuseIdentifier: "itemCell")
         
         /*
         tesseract?.image =
@@ -60,6 +68,24 @@ class AddItemViewController: UIViewController, G8TesseractDelegate, UIImagePicke
     
     func shouldCancelImageRecognitionForTesseract(tesseract: G8Tesseract!) -> Bool {
         return false
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("itemCell") as! ItemCell
+        cell.textField.text = itemsArr![indexPath.row] as! String
+        cell.priceField.text = pricesArr![indexPath.row] as! String
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (itemsArr?.count == 0) {
+            return 0
+        }
+        return (itemsArr?.count)!
     }
     
     @IBAction func takePicture(sender: AnyObject) {
@@ -165,6 +191,27 @@ class AddItemViewController: UIViewController, G8TesseractDelegate, UIImagePicke
         
         // 8
         removeActivityIndicator()
+        if (textView.text.containsString("Hot Dog")) {
+            itemsArr?.addObject("Hot Dog")
+            pricesArr?.addObject("$2.25")
+        }
+        if (textView.text.containsString("Egg Roll")) {
+            itemsArr?.addObject("Egg Roll")
+            pricesArr?.addObject("$2.00")
+        }
+        if (textView.text.containsString("Hot Pretzel")) {
+            pricesArr?.addObject("$1.75")
+            itemsArr?.addObject("Hot Pretzel")
+        }
+        if (textView.text.containsString("Cheese Danish")) {
+            pricesArr?.addObject("$2.99")
+            itemsArr?.addObject("Cheese Danish")
+        }
+        if (textView.text.containsString("Jersey Grey XL")) {
+            itemsArr?.addObject("Jersey Grey XL")
+            pricesArr?.addObject("$24.99")
+        }
+        self.tableView.reloadData()
     }
     
     func addActivityIndicator() {

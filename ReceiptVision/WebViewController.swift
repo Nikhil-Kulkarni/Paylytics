@@ -29,8 +29,8 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         let url = request.URL?.absoluteString
         var jsonParser: AnyObject?
-        if (url == "https://sanshackgt.azurewebsites.net/auth/windowslive/callback") {
-            let data = NSData(contentsOfURL: NSURL(string: "https://sanshackgt.azurewebsites.net/auth/windowslive/callback")!)
+        if ((url!.containsString("sanshackgt.azurewebsites.net/auth/windowslive/callback"))) {
+            let data = NSData(contentsOfURL: NSURL(string: url!)!)
             do {
                 jsonParser = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
             }
@@ -38,8 +38,9 @@ class WebViewController: UIViewController, UIWebViewDelegate {
                 print("Error")
             }
             let dict = jsonParser as! NSDictionary
-            ACCESS_TOKEN = dict.objectForKey("ACCESS_TOKEN") as! String
-            print("On target site")
+            ACCESS_TOKEN = dict.objectForKey("access_token") as! String
+            print(ACCESS_TOKEN)
+            performSegueWithIdentifier("setBudget", sender: nil)
         }
         return true
     }

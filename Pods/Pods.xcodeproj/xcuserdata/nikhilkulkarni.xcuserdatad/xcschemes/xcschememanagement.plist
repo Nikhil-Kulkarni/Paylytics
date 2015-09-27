@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>TesseractOCRiOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,7 +42,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>13AE09F07DF6E6EDE00EB941940CC140</key>
+		<key>0C4F35701AB30AFD5F5309ACB805C1AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,7 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C7304F6978985EF6398D8669499986E</key>
+		<key>689B12A2BDC20DDA67B9EBF267C760C9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A669B59CF23D2360518CC233F1C80D6B</key>
+		<key>B4C7EFAFD85DF83956359D689E7AF05D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E7785B583F5EA229A59285D4E4D12379</key>
+		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C814FC6D5E3BC4B28243A9660E7EBFF6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

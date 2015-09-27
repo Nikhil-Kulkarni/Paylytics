@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "518A66D6CE12809DBD025724"
-               BuildableName = "PNChart.framework"
-               BlueprintName = "PNChart"
+               BlueprintIdentifier = "129E9173C33750271D00C7CC"
+               BuildableName = "SwiftyJSON.framework"
+               BlueprintName = "SwiftyJSON"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

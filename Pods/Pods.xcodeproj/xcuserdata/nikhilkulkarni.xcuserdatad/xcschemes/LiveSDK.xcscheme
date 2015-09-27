@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "73137F1646B7D64759D74656"
+               BlueprintIdentifier = "F30502AF287B9EBB6E4CBA36"
                BuildableName = "LiveSDK.framework"
                BlueprintName = "LiveSDK"
                ReferencedContainer = "container:Pods.xcodeproj">

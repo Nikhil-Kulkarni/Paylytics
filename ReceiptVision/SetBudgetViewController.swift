@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class SetBudgetViewController: UIViewController {
+    
+    var activityIndicator: UIActivityIndicatorView?
 
     @IBOutlet var budgetField: UITextField!
     override func viewDidLoad() {
@@ -23,7 +26,37 @@ class SetBudgetViewController: UIViewController {
     }
     
     @IBAction func letsGo(sender: AnyObject) {
-        
+        let str = "https://sanshackgt.azurewebsites.net/set?access_token=\(ACCESS_TOKEN!)"
+        let request = NSMutableURLRequest(URL: NSURL(string: str)!)
+        addActivityIndicator()
+        let session = NSURLSession.sharedSession()
+        request.HTTPMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.HTTPBody = "{\"budget\": \(budgetField!.text!)}".dataUsingEncoding(NSUTF8StringEncoding)
+        print("{\"budget:\" \(budgetField!.text!)}")
+        let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            print(response)
+            let parsedJSON = JSON(data: data!)
+            print(parsedJSON)
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.removeActivityIndicator()
+            })
+        }
+        task.resume()
+        performSegueWithIdentifier("goToMain", sender: nil)
+    }
+    
+    func addActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(frame: view.bounds)
+        activityIndicator!.activityIndicatorViewStyle = .WhiteLarge
+        activityIndicator!.backgroundColor = UIColor(white: 0, alpha: 0.25)
+        activityIndicator!.startAnimating()
+        view.addSubview(activityIndicator!)
+    }
+    
+    func removeActivityIndicator() {
+        activityIndicator!.removeFromSuperview()
+        activityIndicator = nil
     }
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {}

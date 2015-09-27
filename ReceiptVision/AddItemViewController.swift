@@ -187,6 +187,7 @@ class AddItemViewController: UIViewController, G8TesseractDelegate, UIImagePicke
         
         // 7
         textView.text = tesseract.recognizedText
+        print(textView.text)
         textView.editable = true
         
         // 8

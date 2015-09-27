@@ -165,6 +165,9 @@
                                 <state key="normal" title="Confirm">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirm:" destination="nS1-QI-lGc" eventType="touchUpInside" id="iht-sH-9Lc"/>
+                                </connections>
                             </button>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lh2-oE-6ac">
                                 <rect key="frame" x="0.0" y="64" width="375" height="321"/>
@@ -523,7 +526,6 @@
                                 </state>
                                 <connections>
                                     <action selector="letsGo:" destination="dQc-wT-hIB" eventType="touchUpInside" id="B3o-Dc-qid"/>
-                                    <segue destination="CNV-9I-Urk" kind="show" id="ExW-nS-DQA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -544,6 +546,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="budgetField" destination="Hqa-k9-jlL" id="Vdg-pX-8xr"/>
+                        <segue destination="CNV-9I-Urk" kind="show" identifier="goToMain" id="9w7-Fh-QuL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLt-eX-rHz" userLabel="First Responder" sceneMemberID="firstResponder"/>

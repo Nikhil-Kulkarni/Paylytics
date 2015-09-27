@@ -9,6 +9,7 @@
 import UIKit
 
 var ACCESS_TOKEN: String?
+var LIVE_TOKEN: String?
 
 class WebViewController: UIViewController, UIWebViewDelegate {
     
@@ -38,8 +39,10 @@ class WebViewController: UIViewController, UIWebViewDelegate {
                 print("Error")
             }
             let dict = jsonParser as! NSDictionary
+            print(dict)
             ACCESS_TOKEN = dict.objectForKey("access_token") as! String
-            print(ACCESS_TOKEN)
+            LIVE_TOKEN = dict.objectForKey("liveToken") as! String
+            
             performSegueWithIdentifier("setBudget", sender: nil)
         }
         return true

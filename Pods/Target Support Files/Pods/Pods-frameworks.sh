@@ -55,6 +55,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/LiveSDK.framework'
   install_framework 'Pods/PNChart.framework'
   install_framework 'Pods/PNChartSwift.framework'
+  install_framework 'Pods/SwiftyJSON.framework'
   install_framework 'Pods/TesseractOCR.framework'
   install_framework 'Pods/UICountingLabel.framework'
 fi
@@ -62,6 +63,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/LiveSDK.framework'
   install_framework 'Pods/PNChart.framework'
   install_framework 'Pods/PNChartSwift.framework'
+  install_framework 'Pods/SwiftyJSON.framework'
   install_framework 'Pods/TesseractOCR.framework'
   install_framework 'Pods/UICountingLabel.framework'
 fi

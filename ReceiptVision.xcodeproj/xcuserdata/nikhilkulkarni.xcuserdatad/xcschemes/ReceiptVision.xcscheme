@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1118E5D51BB672280074BD2B"
-               BuildableName = "ReceiptVision.app"
+               BuildableName = "Paylytics.app"
                BlueprintName = "ReceiptVision"
                ReferencedContainer = "container:ReceiptVision.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1118E5D51BB672280074BD2B"
-            BuildableName = "ReceiptVision.app"
+            BuildableName = "Paylytics.app"
             BlueprintName = "ReceiptVision"
             ReferencedContainer = "container:ReceiptVision.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1118E5D51BB672280074BD2B"
-            BuildableName = "ReceiptVision.app"
+            BuildableName = "Paylytics.app"
             BlueprintName = "ReceiptVision"
             ReferencedContainer = "container:ReceiptVision.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1118E5D51BB672280074BD2B"
-            BuildableName = "ReceiptVision.app"
+            BuildableName = "Paylytics.app"
             BlueprintName = "ReceiptVision"
             ReferencedContainer = "container:ReceiptVision.xcodeproj">
          </BuildableReference>

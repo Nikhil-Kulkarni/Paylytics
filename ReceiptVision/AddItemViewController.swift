@@ -175,13 +175,17 @@ class AddItemViewController: UIViewController, G8TesseractDelegate, UIImagePicke
         request.HTTPBody = body
         var responseData: NSData?
         do {
-            responseData = try NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
+//            responseData = try NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue(), completionHandler: { (response, data, error) -> Void in
+                responseData = data
+                print(data)
+            })
         } catch {}
-        var result: AnyObject?
-        do {
-            result = try NSJSONSerialization.JSONObjectWithData(responseData!, options: NSJSONReadingOptions.MutableContainers)
-        } catch {}
-        print(result)
+//        var result: AnyObject?
+//        do {
+//            result = try NSJSONSerialization.JSONObjectWithData(responseData!, options: NSJSONReadingOptions.MutableContainers)
+//        } catch {}
+//        print(result)
         
         let blackAndWhitePhoto = selectedPhoto.convertToGrayScale()
         let scaledImage = scaleImage(blackAndWhitePhoto, maxDimension: 640)
